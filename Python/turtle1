@@ -1,0 +1,25 @@
+import turtle as t
+import random
+
+colors = ["red", "orange", "yellow", "green", "blue"]
+
+screen = t.Screen()
+screen.setup(300, 300)
+screen.bgcolor('white')
+
+t.shape('turtle')
+t.speed(0)
+t.shapesize(1)
+t.penup()
+
+x = -150
+y = 150
+
+for i in range(7):
+    for j in range(7):
+        color = random.choice(colors)
+        t.color(color)
+        t.goto(x + j * 50, y - i * 50)
+        t.stamp()
+
+t.done()
