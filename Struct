@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+typedef struct pokemon{
+    char name[30];
+    char type[30];
+    int level;
+} POKEMON;
+
+POKEMON makepmon(char* name, char* type, int level){
+    POKEMON pmon;
+    strcpy(pmon.name, name);
+    strcpy(pmon.type, type);
+    pmon.level = level;
+    return pmon;
+}
+
+int main(void){
+    int num;
+    POKEMON pmon, p1, p2, p3;
+    p1 = makepmon("아르세우스", "노말", 10);
+    p2 = makepmon("그란돈", "바위", 20);
+    p3 = makepmon("찌르꼬", "비행", 30);
+    
+    printf("1. 아르세우스 2. 그란돈 3. 찌르꼬 (숫자입력): ");
+    scanf("%d", &num);
+    if(num==1)          pmon = p1;
+    else if(num==2)     pmon = p2;
+    else if(num==3)     pmon = p3;
+    else                printf("잘못된 입력입니다.\n");
+    
+    printf("이름: %s \t", pmon.name);
+    printf("타입: %s \t", pmon.type);
+    printf("레벨: %d \n", pmon.level);
+    return 0;
+}
