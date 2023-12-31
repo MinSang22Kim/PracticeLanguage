@@ -1,0 +1,16 @@
+#define SWAP(x, y, t) ((t)=(x), (x)=(y), (y)=(t)
+#include <stdio.h>
+int main(void){
+    int i, j,temp,n;
+    int flag = 0;
+    
+    for(i=n-1; i>0; i--){
+        flag=0;
+        for(int j=0; j<i; j++){
+            if(list[j]>list[j+1]){
+                SWAP(list[j], list[j+1], temp);
+            }
+        }
+    }
+    return 0;
+}
